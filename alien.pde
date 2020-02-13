@@ -33,7 +33,7 @@ public class Alien{
     }
   }
   */
-  public void breakBrick() {
+  public void shootAlien() {
     shot = true;
     w=0;
     h=0;

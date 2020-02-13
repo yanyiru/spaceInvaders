@@ -2,6 +2,7 @@ PImage cannon;
 Alien[] alien;
 float x;
 float y;
+Bullet b;
 
 public void setup(){
   size(600,400);
