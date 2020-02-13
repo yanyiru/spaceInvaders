@@ -54,6 +54,9 @@ void checkKeyPresses(){
           x=(width-10);
         }
       }
+      else if(keyCode==SPACE){
+        
+      }
 
   }
  }

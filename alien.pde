@@ -24,15 +24,13 @@ public class Alien{
     image(alien, x, y, 60, 80);
   }
   
-/*
   public void brickCollision(){
     if(shot==false);
       if((x<(b.x+(b.w/2))) && ((b.x+(b.w/2))<(x+w)) && y<(b.y+(b.w/2)) && (b.y+(b.w/2))< (y+h)){
       b.yVel*=-1;
-      breakBrick();
+      shootAlien();
     }
   }
-  */
   public void shootAlien() {
     shot = true;
     w=0;

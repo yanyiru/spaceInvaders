@@ -16,8 +16,8 @@ public class Bullet{
     y = 0;   //vertical middle of screen
     h=20;           //height of ball
     w=width/9;            //width of ball
-    xVel=2;          //speed in horizontal direction
-    yVel=2;          //speed in vertical direction
+    xVel=-2;          //speed in horizontal direction
+    yVel=-2;          //speed in vertical direction
   }
   
   public void show(){
@@ -29,10 +29,6 @@ public class Bullet{
   public void update(){
     x+=xVel;              //updates the ball to a new x and y position
     y+=yVel;
-  
-  
-  
-
 
   }
 }
