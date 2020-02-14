@@ -23,17 +23,10 @@ void draw(){
   int k = 0;
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 9; j++){
-        if(i%2==0){
-          alien[k].x=j*(width/9)+35;
-          alien[k].y=(i*50)+20;
-          alien[k].show();
-        }
-        if(i%2==1){
-          alien[k].x=j*(width/9)+35;
-          alien[k].y=(i*50)+20;
-          alien[k].show();
-        }
-        k++;
+      alien[k].x=j*(width/9)+35;
+      alien[k].y=(i*50)+20;
+      alien[k].show();
+      k++;
     }
   }
   
@@ -54,7 +47,7 @@ void checkKeyPresses(){
           x=(width-10);
         }
       }
-      else if(keyCode==SPACE){
+      else if(key==' '){
         
       }
 
