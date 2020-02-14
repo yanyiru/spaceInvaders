@@ -3,22 +3,25 @@ Alien[] alien;
 float x;
 float y;
 Bullet b;
+boolean shot;
 
 public void setup(){
   size(600,400);
   imageMode(CENTER);
-  alien=new Alien[45];
+  alien=new Alien[45]; 
   for(int i=0; i<alien.length; i++){
     alien[i] = new Alien();             //creates a new ball object
   }
   x = width/2;
   y = (height/10)*8;
+  shot = false;
 }
 
 void draw(){
+  println(shot);
+  
   background(0);
   cannon = loadImage("./images/cannon.png");
-  image(cannon,x,y,50,50);
   checkKeyPresses();
   int k = 0;
   for(int i = 0; i < 5; i++){
@@ -29,7 +32,14 @@ void draw(){
       k++;
     }
   }
-  
+  if(shot){
+    b.show();
+    b.update();
+  }
+  image(cannon,x,y,50,50);
+  for(int i = 0; i < alien.length;i++){
+    alien[i].shootAlien();
+  }
 }
 
 void checkKeyPresses(){
@@ -48,8 +58,13 @@ void checkKeyPresses(){
         }
       }
       else if(key==' '){
-        
+        if(shot==false){
+          println("space");
+          b=new Bullet();
+          b.x=int(x);
+          b.y=int(y);
+          shot = true;
       }
-
+      }
   }
  }
