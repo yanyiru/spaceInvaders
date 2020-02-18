@@ -10,7 +10,7 @@ public void setup(){
   imageMode(CENTER);
   alien=new Alien[45]; 
   for(int i=0; i<alien.length; i++){
-    alien[i] = new Alien();             //creates a new ball object
+    alien[i] = new Alien();             //creates a new alien object
   }
   x = width/2;
   y = (height/10)*8;
