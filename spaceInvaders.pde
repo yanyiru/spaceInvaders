@@ -78,6 +78,9 @@ void checkKeyPresses(){
           b=new Bullet();
           b.x=int(x);
           b.y=int(y);
+          if(b.y>=height){
+            shot=false;
+          }
       }
   }
  }

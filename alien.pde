@@ -17,7 +17,6 @@ public class Alien{
     image(alien, x, y, 60, 80);
     h=20;           //height of ball
     w=width/9;            //width of ball
-    shot = false;
     killed=false;
   }
   
@@ -29,6 +28,7 @@ public class Alien{
       if((x<(b.x+(b.w/2))) && ((b.x+(b.w/2))<(x+w)) && y<(b.y+(b.w/2)) && (b.y+(b.w/2))< (y+h)){
         shootAlien();
         killed=true;
+        shot=false;
       }  
 
     }
