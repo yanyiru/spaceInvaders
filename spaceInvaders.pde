@@ -6,7 +6,7 @@ Bullet b;
 boolean shot;
 
 public void setup(){
-  size(600,400);
+  size(1200,800);
   imageMode(CENTER);
   alien=new Alien[45]; 
   for(int i=0; i<alien.length; i++){
@@ -26,10 +26,24 @@ void draw(){
   int k = 0;
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 9; j++){
-      alien[k].x=j*(width/9)+35;
-      alien[k].y=(i*50)+20;
-      alien[k].show();
-      k++;
+      if(frameCount%200>=50&&frameCount%200<=100||frameCount%200>=150&&frameCount%200<=200){
+        alien[k].x=(j+3)*((width/15))+20;
+        alien[k].y=((i+2)*50)+40;
+        alien[k].show();
+        k++;
+      }
+      else if(frameCount%200<=50){
+        alien[k].x=(j+4)*((width/15))+20;
+        alien[k].y=((i+2)*50)+40;
+        alien[k].show();
+        k++;
+      }
+      else if(frameCount%200>=100&&frameCount%200<=150){
+        alien[k].x=(j+2)*((width/15))+20;
+        alien[k].y=((i+2)*50)+40;
+        alien[k].show();
+        k++;
+      }
     }
   }
   if(shot){
@@ -68,3 +82,4 @@ void checkKeyPresses(){
       }
   }
  }
+ 
