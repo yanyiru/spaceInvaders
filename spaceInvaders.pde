@@ -52,7 +52,7 @@ void draw(){
   }
   image(cannon,x,y,50,50);
   for(int i = 0; i < alien.length;i++){
-    alien[i].shootAlien();
+    alien[i].alienShot();
   }
 }
 
@@ -73,13 +73,13 @@ void checkKeyPresses(){
       }
       else if(key==' '){
         if(shot==false){
+          shot=true;
           println("space");
           b=new Bullet();
           b.x=int(x);
           b.y=int(y);
-          shot = true;
-      }
       }
   }
  }
  
+}

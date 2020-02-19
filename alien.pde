@@ -7,6 +7,7 @@ public class Alien{
   int y;
   int h;
   int w;
+  boolean killed;
  
   //constructor
   public Alien(){
@@ -17,6 +18,7 @@ public class Alien{
     h=20;           //height of ball
     w=width/9;            //width of ball
     shot = false;
+    killed=false;
   }
   
   public void show(){
@@ -24,17 +26,16 @@ public class Alien{
   }
   
   public void alienShot(){
-    if(shot==false){
       if((x<(b.x+(b.w/2))) && ((b.x+(b.w/2))<(x+w)) && y<(b.y+(b.w/2)) && (b.y+(b.w/2))< (y+h)){
-        shootAlien(); 
+        shootAlien();
+        killed=true;
       }  
 
     }
-  }
-  public void shootAlien() {
+    public void shootAlien() {
     w=0;
     h=0;
   }
-  
-  
 }
+  
+  
