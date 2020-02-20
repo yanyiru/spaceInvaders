@@ -23,7 +23,7 @@ public class Alien{
   public void show(){
     image(alien, x, y, 60, 80);
   }
-  
+  /*
   public void alienShot(){
       if((x<(b.x+(b.w/2))) && ((b.x+(b.w/2))<(x+w)) && y<(b.y+(b.w/2)) && (b.y+(b.w/2))< (y+h)){
         shootAlien();
@@ -36,6 +36,7 @@ public class Alien{
     w=0;
     h=0;
   }
+  */
 }
   
   

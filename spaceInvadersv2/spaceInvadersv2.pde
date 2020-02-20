@@ -19,27 +19,27 @@ public void setup(){
 
 void draw(){
   println(shot);
-  
+  println(second());
   background(0);
   cannon = loadImage("./images/cannon.png");
   checkKeyPresses();
   int k = 0;
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 9; j++){
-      if(frameCount%200>=50&&frameCount%200<=100||frameCount%200>=150&&frameCount%200<=200){
+      if(second()%4==2||second()%4==0){
         alien[k].x=(j+3)*((width/15))+20;
         alien[k].y=((i+2)*50)+40;
         alien[k].show();
         k++;
       }
-      else if(frameCount%200<=50){
-        alien[k].x=(j+4)*((width/15))+20;
+      else if(second()%4==1){
+        alien[k].x=(j+3)*((width/15))+10;
         alien[k].y=((i+2)*50)+40;
         alien[k].show();
         k++;
       }
-      else if(frameCount%200>=100&&frameCount%200<=150){
-        alien[k].x=(j+2)*((width/15))+20;
+      else if(second()%4==3){
+        alien[k].x=(j+3)*((width/15))+30;
         alien[k].y=((i+2)*50)+40;
         alien[k].show();
         k++;
@@ -52,7 +52,7 @@ void draw(){
   }
   image(cannon,x,y,50,50);
   for(int i = 0; i < alien.length;i++){
-    alien[i].alienShot();
+    //alien[i].alienShot();
   }
 }
 
