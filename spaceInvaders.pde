@@ -52,7 +52,7 @@ void draw(){
   }
   image(cannon,x,y,50,50);
   for(int i = 0; i < alien.length;i++){
-    alien[i].alienShot();
+    //alienShot();
   }
 }
 
@@ -85,4 +85,19 @@ void checkKeyPresses(){
   }
  }
  
+
+      
+ 
+}
+
+void alienShot(){
+  /*
+  for(int i=0; i<alien.length; i++){
+    if((alien[i].x<(b.x+(b.w/2))) && ((b.x+(b.w/2))<(alien[i].x+alien[i].w)) && alien[i].y<(b.y+(b.w/2)) && (b.y+(b.w/2))< (alien[i].y+alien[i].h)){
+        alien[i].shootAlien();
+        alien[i].killed=true;
+        shot=false;
+      }
+  }
+  */
 }
