@@ -23,26 +23,139 @@ void draw(){
   background(0);
   cannon = loadImage("./images/cannon.png");
   checkKeyPresses();
+  if(shot){
+    b.show();
+    b.update();
+    if(b.y<=0){
+      shot=false;
+    }
+  }
   int k = 0;
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 9; j++){
-      if(second()%4==2||second()%4==0){
-        alien[k].x=(j+3)*((width/15))+20;
-        alien[k].y=((i+2)*50)+40;
-        alien[k].show();
-        k++;
+      if(second()%2==0){
+        if(second()%20==1||second()%20==0){
+          alien[k].x=(j+3)*((width/15))-90;
+          alien[k].y=((i+2)*50)+40;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==2||second()%20==19){
+          alien[k].x=(j+3)*((width/15))-60;
+          alien[k].y=((i+2)*50)+40;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==3||second()%20==18){
+          alien[k].x=(j+3)*((width/15))-30;
+          alien[k].y=((i+2)*50)+40;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==4||second()%20==17){
+          alien[k].x=(j+3)*((width/15))+0;
+          alien[k].y=((i+2)*50)+40;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==5||second()%20==16){
+          alien[k].x=(j+3)*((width/15))+30;
+          alien[k].y=((i+2)*50)+40;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==6||second()%20==15){
+          alien[k].x=(j+3)*((width/15))+60;
+          alien[k].y=((i+2)*50)+40;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==7||second()%20==14){
+          alien[k].x=(j+3)*((width/15))+90;
+          alien[k].y=((i+2)*50)+40;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==8||second()%20==13){
+          alien[k].x=(j+3)*((width/15))+120;
+          alien[k].y=((i+2)*50)+40;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==9||second()%20==12){
+          alien[k].x=(j+3)*((width/15))+150;
+          alien[k].y=((i+2)*50)+40;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==10||second()%20==11){
+          alien[k].x=(j+3)*((width/15))+180;
+          alien[k].y=((i+2)*50)+40;
+          alien[k].show();
+          k++;
+        }
       }
-      else if(second()%4==1){
-        alien[k].x=(j+3)*((width/15))+10;
-        alien[k].y=((i+2)*50)+40;
-        alien[k].show();
-        k++;
-      }
-      else if(second()%4==3){
-        alien[k].x=(j+3)*((width/15))+30;
-        alien[k].y=((i+2)*50)+40;
-        alien[k].show();
-        k++;
+      else if(second()%2==1){
+        if(second()%20==1||second()%20==0){
+          alien[k].x=(j+3)*((width/15))-90;
+          alien[k].y=((i+2)*50)+20;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==2||second()%20==19){
+          alien[k].x=(j+3)*((width/15))-60;
+          alien[k].y=((i+2)*50)+20;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==3||second()%20==18){
+          alien[k].x=(j+3)*((width/15))-30;
+          alien[k].y=((i+2)*50)+20;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==4||second()%20==17){
+          alien[k].x=(j+3)*((width/15))+0;
+          alien[k].y=((i+2)*50)+20;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==5||second()%20==16){
+          alien[k].x=(j+3)*((width/15))+30;
+          alien[k].y=((i+2)*50)+20;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==6||second()%20==15){
+          alien[k].x=(j+3)*((width/15))+60;
+          alien[k].y=((i+2)*50)+20;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==7||second()%20==14){
+          alien[k].x=(j+3)*((width/15))+90;
+          alien[k].y=((i+2)*50)+20;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==8||second()%20==13){
+          alien[k].x=(j+3)*((width/15))+120;
+          alien[k].y=((i+2)*50)+20;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==9||second()%20==12){
+          alien[k].x=(j+3)*((width/15))+150;
+          alien[k].y=((i+2)*50)+20;
+          alien[k].show();
+          k++;
+        }
+        else if(second()%20==10||second()%20==11){
+          alien[k].x=(j+3)*((width/15))+180;
+          alien[k].y=((i+2)*50)+20;
+          alien[k].show();
+          k++;
+        }
       }
     }
   }
@@ -71,18 +184,19 @@ void checkKeyPresses(){
           x=(width-10);
         }
       }
-      else if(key==' '){
-        if(shot==false){
-          shot=true;
-          println("space");
-          b=new Bullet();
-          b.x=int(x);
-          b.y=int(y);
-          if(b.y>=height){
-            shot=false;
+      if(shot==false){
+        if(key==' '){
+          //if(shot==false){
+            println("space");
+            b=new Bullet();
+            b.x=int(x);
+            b.y=int(y);
+            b.w=5;
+            b.h=10;
+            shot=true;
+            
           }
-      }
-  }
- }
- 
+            
+    }
 }
+  }

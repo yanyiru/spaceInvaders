@@ -24,7 +24,7 @@ public class Bullet{
   
   
   public void show(){
-    fill(255,0,0);
+    fill(0,255,0);
     rect(x,y,w,h);     //draws an ellipse at x,y location, if w=h then a circle is drawn
 }
 
