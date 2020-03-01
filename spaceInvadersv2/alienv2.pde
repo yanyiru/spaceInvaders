@@ -1,7 +1,6 @@
   
 public class Alien{
  
-  //instance variables
   PImage alien;
   int x;
   int y;
@@ -9,14 +8,13 @@ public class Alien{
   int w;
   boolean killed;
  
-  //constructor
   public Alien(){
     alien=loadImage("./images/alien.png");
-    x = 0;   //left-right middle of the screen
-    y = 0;   //vertical middle of screen
+    x = 0;
+    y = 0;
     image(alien, x, y, 60, 80);
-    h=20;           //height of ball
-    w=width/9;            //width of ball
+    h=20;
+    w=width/9;
     killed=false;
   }
   
@@ -30,8 +28,8 @@ public class Alien{
  
   public Alien(int q){
     alien=loadImage("./images/black.jpeg");
-    x = 0;   //left-right middle of the screen
-    y = 0;   //vertical middle of screen
+    x = 0;
+    y = 0;
     image(alien, x, y, 1, 1);
     h=0;           
     w=0;           

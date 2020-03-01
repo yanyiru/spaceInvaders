@@ -4,6 +4,7 @@ float x;
 float y;
 Bullet b;
 boolean shot;
+int score=0;
 
 public void setup(){
   size(1200,800);
@@ -19,11 +20,10 @@ public void setup(){
 }
 
 void draw(){
-  //println(shot);
-  //println(second());
   background(0);
   cannon = loadImage("./images/cannon.png");
   checkKeyPresses();
+  showScore();
   if(shot){
     b.show();
     b.update();
@@ -32,7 +32,6 @@ void draw(){
     }
   }
   isCollided();
-
   int k = 0;
   for(int i = 0; i < 5; i++){
     for(int j = 0; j < 9; j++){
@@ -167,41 +166,33 @@ void draw(){
     b.update();
   }
   image(cannon,x,y,50,50);
-  for(int i = 0; i < alien.length;i++){
-    //alien[i].alienShot();
-  }
 }
 
 void checkKeyPresses(){
   if(keyPressed){
-  
-      if(keyCode==LEFT){
-        x-=5;
-        if(x<10 ){
-          x=10;
-        }
+    if(keyCode==LEFT){
+      x-=5;
+      if(x<10 ){
+        x=10;
       }
-      else if(keyCode==RIGHT){
-        x+=5;
-        if( x>width-10){
-          x=(width-10);
-        }
-      }
-      if(shot==false){
-        if(key==' '){
-          //if(shot==false){
-            //println("space");
-            b.x=int(x);
-            b.y=int(y);
-            b.w=5;
-            b.h=10;
-            shot=true;
-            
-          }
-            
     }
-}
+    else if(keyCode==RIGHT){
+      x+=5;
+      if( x>width-10){
+        x=(width-10);
+      }
+    }
+    if(shot==false){
+      if(key==' '){
+        b.x=int(x);
+        b.y=int(y);
+        b.w=5;
+        b.h=10;
+        shot=true;
+      }
+    }
   }
+}
   
 void isCollided(){
   for(int i = 0; i < alien.length; i++){
@@ -211,6 +202,15 @@ void isCollided(){
       b.x=int(x);
       b.y=int(y);
       shot=false;
+      score++;
     }
   }
+}
+
+void showScore(){
+  textSize(30);
+  fill(255);
+  text("Score: " + score, 1000,40);
+  textSize(20);
+
 }

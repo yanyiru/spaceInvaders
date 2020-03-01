@@ -1,6 +1,5 @@
 public class Bullet{
  
-  //instance variables
   PImage cannon;
   int x;
   int y;
@@ -14,27 +13,23 @@ public class Bullet{
     imageMode(CENTER);
     strokeWeight(0);
     cannon=loadImage("./images/cannon.png");
-    x = width;   //left-right middle of the screen
-    y = height;   //vertical middle of screen
-    h=10;           //height of ball
-    w=5;            //width of ball
-    yVel=-10;          //speed in vertical direction
+    x = width;
+    y = height;
+    h=10;
+    w=5;
+    yVel=-10;
     shot = false;
   }
   
   
   public void show(){
     fill(0,255,0);
-    rect(x,y,w,h);     //draws an ellipse at x,y location, if w=h then a circle is drawn
+    rect(x,y,w,h);
 }
 
   
-  public void update(){           //updates the ball to a new x and y position
+  public void update(){
     y+=yVel;
-  }
-  
-  public void shotAlien(){
-     
   }
   
 }
