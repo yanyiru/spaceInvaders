@@ -25,18 +25,17 @@ public class Alien{
   }
   
   public void alienShot(){
-      //if(){
-        shootAlien();
-        killed=true;
-        shot=false;
-      //}
-      
-     
-
-    }
-    public void shootAlien() {
-    w=0;
-    h=0;
+    image(alien, x, y, 0, 0);
+  }
+ 
+  public Alien(int q){
+    alien=loadImage("./images/black.jpeg");
+    x = 0;   //left-right middle of the screen
+    y = 0;   //vertical middle of screen
+    image(alien, x, y, 1, 1);
+    h=0;           
+    w=0;           
+    killed=false;
   }
 }
   

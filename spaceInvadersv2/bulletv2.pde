@@ -14,11 +14,11 @@ public class Bullet{
     imageMode(CENTER);
     strokeWeight(0);
     cannon=loadImage("./images/cannon.png");
-    x = width/2;   //left-right middle of the screen
-    y = height/2;   //vertical middle of screen
+    x = width;   //left-right middle of the screen
+    y = height;   //vertical middle of screen
     h=10;           //height of ball
     w=5;            //width of ball
-    yVel=-5;          //speed in vertical direction
+    yVel=-10;          //speed in vertical direction
     shot = false;
   }
   
